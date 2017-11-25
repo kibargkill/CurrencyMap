@@ -26,8 +26,11 @@ class ViewController: UIViewController {
             guard let data = data else { return }
             guard error == nil else { return }
             do {
-                _ = try JSONDecoder().decode(JsonFinanceUA.self, from: data)
-                
+                let jsonprint = try JSONDecoder().decode(JsonFinanceUA.self, from: data)
+                print(jsonprint)
+//                Could not inset legal attribution from corner 4
+//                typeMismatch(Swift.Dictionary<Swift.String, Any>, Swift.DecodingError.Context(codingPath: [map.JsonFinanceUA.(CodingKeys in _AE1FDAE83CA4EB0C0F893358FDBA18EC).organizations], debugDescription: "Expected to decode Dictionary<String, Any> but found an array instead.", underlyingError: nil))
+
             } catch let error{
                 print(error)
             }

@@ -10,78 +10,78 @@ import Foundation
 
 struct JsonFinanceUA: Decodable {
     var sourceID:String?
-//    var data:Int
+    var data: String?
     var organizations: OrganizationName?
     var orgTypes: orgTypesVal?
     var currencies: currenciesType?
-    var regions: String
-    var cities: String
+//    var regions: String?
+//    var cities: String?
 }
 struct OrganizationName: Decodable {
-    var id: String
-    var oldId: Int
-    var orgType: Int
-    var branch: Bool
-    var title: String
-    var regionId: String
-    var cityId: String
-    var phone: Int
-    var address: String
-    var link: String
-    var currencies: CurrenciesVal
+//     var id: String?
+//    var oldId: Int?
+//    var orgType: Int?
+//    var branch: Bool?
+    var title: String?
+//    var regionId: String?
+//    var cityId: String?
+//    var phone: Int?
+//    var address: String?
+//    var link: String?
+//    var currencies: CurrenciesVal?
 }
 struct CurrenciesVal: Decodable {
     
-    var RUB: AskBid
-    var AED: AskBid
-    var AMD: AskBid
-    var AUD: AskBid
-    var AZN: AskBid
-    var BGN: AskBid
-    var BRL: AskBid
-    var BYN: AskBid
-    var CAD: AskBid
-    var CHF: AskBid
-    var CLP: AskBid
-    var CNY: AskBid
-    var CZK: AskBid
-    var DKK: AskBid
-    var EGP: AskBid
-    var EUR: AskBid
-    var GBP: AskBid
-    var GEL: AskBid
-    var HKD: AskBid
-    var HRK: AskBid
-    var HUF: AskBid
-    var ITS: AskBid
-    var INR: AskBid
-    var FPY: AskBid
-    var KRW: AskBid
-    var KWD: AskBid
-    var KZT: AskBid
-    var LBP: AskBid
-    var MDL: AskBid
-    var MXN: AskBid
-    var NOK: AskBid
-    var NZD: AskBid
-    var PLN: AskBid
-    var RON: AskBid
-    var SAR: AskBid
-    var SEK: AskBid
-    var SGD: AskBid
-    var THB: AskBid
-    var TRY: AskBid
-    var TWD: AskBid
-    var USD: AskBid
-    var VND: AskBid
+    var RUB: AskBid?
+    var AED: AskBid?
+    var AMD: AskBid?
+    var AUD: AskBid?
+    var AZN: AskBid?
+    var BGN: AskBid?
+    var BRL: AskBid?
+    var BYN: AskBid?
+    var CAD: AskBid?
+    var CHF: AskBid?
+    var CLP: AskBid?
+    var CNY: AskBid?
+    var CZK: AskBid?
+    var DKK: AskBid?
+    var EGP: AskBid?
+    var EUR: AskBid?
+    var GBP: AskBid?
+    var GEL: AskBid?
+    var HKD: AskBid?
+    var HRK: AskBid?
+    var HUF: AskBid?
+    var ITS: AskBid?
+    var INR: AskBid?
+    var FPY: AskBid?
+    var KRW: AskBid?
+    var KWD: AskBid?
+    var KZT: AskBid?
+    var LBP: AskBid?
+    var MDL: AskBid?
+    var MXN: AskBid?
+    var NOK: AskBid?
+    var NZD: AskBid?
+    var PLN: AskBid?
+    var RON: AskBid?
+    var SAR: AskBid?
+    var SEK: AskBid?
+    var SGD: AskBid?
+    var THB: AskBid?
+    var TRY: AskBid?
+    var TWD: AskBid?
+    var USD: AskBid?
+    var VND: AskBid?
 }
 struct AskBid: Decodable {
-    var ask: String
-    var bid: String
+    var ask: String?
+    var bid: String?
 }
 struct orgTypesVal: Decodable {
-    var one: String
-    var two: String
+    var one: String?
+    var two: String?
 }
 struct currenciesType: Decodable {
    var AED: String
