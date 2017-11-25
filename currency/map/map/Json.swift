@@ -11,24 +11,24 @@ import Foundation
 struct JsonFinanceUA: Decodable {
     var sourceID:String?
     var data: String?
-    var organizations: OrganizationName?
+    var organizations: [OrganizationName?]
     var orgTypes: orgTypesVal?
     var currencies: currenciesType?
 //    var regions: String?
 //    var cities: String?
 }
 struct OrganizationName: Decodable {
-//     var id: String?
-//    var oldId: Int?
-//    var orgType: Int?
-//    var branch: Bool?
+     var id: String?
+    var oldId: Int?
+    var orgType: Int?
+    var branch: Bool?
     var title: String?
-//    var regionId: String?
-//    var cityId: String?
-//    var phone: Int?
-//    var address: String?
-//    var link: String?
-//    var currencies: CurrenciesVal?
+    var regionId: String?
+    var cityId: String?
+    var phone: String?
+    var address: String?
+    var link: String?
+    var currencies: CurrenciesVal?
 }
 struct CurrenciesVal: Decodable {
     
