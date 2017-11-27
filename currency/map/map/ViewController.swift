@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             guard error == nil else { return }
             do {
                 let jsonprint = try JSONDecoder().decode([JsonPrivat].self, from: data)
-      
+                print(jsonprint)
 //                РЕЄСТР ПРИМІЩЕНЬ, В ЯКИХ ЗДІЙСНЮЄТЬСЯ ДІЯЛЬНІСТЬ З ОБМІНУ ВАЛЮ
                 
                
