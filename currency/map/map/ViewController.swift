@@ -9,15 +9,18 @@
 
 import UIKit
 import MapKit
+import CoreLocation
+import AddressBookUI
 
 class ViewController: UIViewController {
     
    
-
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlString = "http://resources.finance.ua/ru/public/currency-cash.json"
+        let urlString = "https://api.privatbank.ua/p24api/pboffice?json&city=&address="
         guard let url = URL(string: urlString) else { return }
         
         
@@ -26,22 +29,33 @@ class ViewController: UIViewController {
             guard let data = data else { return }
             guard error == nil else { return }
             do {
-                let jsonprint = try JSONDecoder().decode(JsonFinanceUA.self, from: data)
+                let jsonprint = try JSONDecoder().decode([JsonPrivat].self, from: data)
                 print(jsonprint)
-//                Could not inset legal attribution from corner 4
-//                typeMismatch(Swift.Dictionary<Swift.String, Any>, Swift.DecodingError.Context(codingPath: [map.JsonFinanceUA.(CodingKeys in _AE1FDAE83CA4EB0C0F893358FDBA18EC).organizations], debugDescription: "Expected to decode Dictionary<String, Any> but found an array instead.", underlyingError: nil))
+                
+                
+               
+//                let geoCoder = CLGeocoder()
+//                geoCoder.geocodeAddressString("524 Ct St,Brooklyn, NY 11231", completionHandler: { placemarks, error in
+//                    let coordinate = placemarks.location?.cordinate
+//                })
+            
 
             } catch let error{
                 print(error)
             }
         }.resume()
+        
+       
+       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
 
 }
+
 

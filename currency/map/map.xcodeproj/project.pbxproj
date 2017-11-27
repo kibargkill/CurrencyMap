@@ -13,6 +13,7 @@
 		1FCCD95E1FC71677001FCA46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCCD95D1FC71677001FCA46 /* Assets.xcassets */; };
 		1FCCD9611FC71677001FCA46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCCD95F1FC71677001FCA46 /* LaunchScreen.storyboard */; };
 		1FCCD9691FC84C5B001FCA46 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCD9681FC84C5B001FCA46 /* Json.swift */; };
+		1FCCD96B1FCC4B5D001FCA46 /* DataMapPrivat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCD96A1FCC4B5D001FCA46 /* DataMapPrivat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1FCCD9601FC71677001FCA46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FCCD9621FC71677001FCA46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FCCD9681FC84C5B001FCA46 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		1FCCD96A1FCC4B5D001FCA46 /* DataMapPrivat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapPrivat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				1FCCD9561FC71677001FCA46 /* AppDelegate.swift */,
 				1FCCD9581FC71677001FCA46 /* ViewController.swift */,
 				1FCCD9681FC84C5B001FCA46 /* Json.swift */,
+				1FCCD96A1FCC4B5D001FCA46 /* DataMapPrivat.swift */,
 				1FCCD95A1FC71677001FCA46 /* Main.storyboard */,
 				1FCCD95D1FC71677001FCA46 /* Assets.xcassets */,
 				1FCCD95F1FC71677001FCA46 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FCCD96B1FCC4B5D001FCA46 /* DataMapPrivat.swift in Sources */,
 				1FCCD9691FC84C5B001FCA46 /* Json.swift in Sources */,
 				1FCCD9591FC71677001FCA46 /* ViewController.swift in Sources */,
 				1FCCD9571FC71677001FCA46 /* AppDelegate.swift in Sources */,
