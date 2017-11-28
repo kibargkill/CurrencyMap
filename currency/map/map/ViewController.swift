@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             do {
                 let jsonprint = try JSONDecoder().decode([JsonPrivat].self, from: data)
                 print(jsonprint)
-//                РЕЄСТР ПРИМІЩЕНЬ, В ЯКИХ ЗДІЙСНЮЄТЬСЯ ДІЯЛЬНІСТЬ З ОБМІНУ ВАЛЮ
+
                 
                
 //                let geoCoder = CLGeocoder()
