@@ -14,7 +14,8 @@ import CoreLocation
 
 class ViewController: UIViewController {
     
-   
+    var addressOfficePlaces: [String] = []
+    var geocoder = CLGeocoder()
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -23,37 +24,38 @@ class ViewController: UIViewController {
         let urlString = "https://api.privatbank.ua/p24api/pboffice?json&city=&address="
         guard let url = URL(string: urlString) else { return }
         
-        
         URLSession.shared.dataTask(with: url) { (data, response, error)  in
             
             guard let data = data else { return }
             guard error == nil else { return }
             do {
                 let jsonprint = try JSONDecoder().decode([JsonPrivat].self, from: data)
-      
-//                РЕЄСТР ПРИМІЩЕНЬ, В ЯКИХ ЗДІЙСНЮЄТЬСЯ ДІЯЛЬНІСТЬ З ОБМІНУ ВАЛЮ
-                
+//                print(jsonprint)
                
+                for item in jsonprint{
+                    self.addressOfficePlaces = ["\(item.country!), \(item.city!), \(item.address!)"]
+//                    print(self.addressOfficePlaces)
+                    for base in self.addressOfficePlaces{
+                        self.geocoder.geocodeAddressString(base, completionHandler: { (placemarks, error) in
+                            print("\(String(describing: placemarks?.count))")
+                        })
+                        print("\(base)")
+                       
+                    }
+                }
 //                let geoCoder = CLGeocoder()
-//                geoCoder.geocodeAddressString("524 Ct St,Brooklyn, NY 11231", completionHandler: { placemarks, error in
-//                    let coordinate = placemarks.location?.cordinate
-//                })
-            
 
             } catch let error{
                 print(error)
             }
         }.resume()
         
-       
-       
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func arrayPlacemarks(placemarks: [CLPlacemark]?, error: Error?){
+      
+      
     }
-    
     
 
 }
