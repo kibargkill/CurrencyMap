@@ -9,6 +9,8 @@
 import Foundation
 
 
-class Cordinates {
-    
-}
+//class Cordinates {
+////    var country: String
+////    var city: String
+//    = "" = ""}
+

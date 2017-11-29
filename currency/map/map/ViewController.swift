@@ -14,8 +14,8 @@ import CoreLocation
 
 class ViewController: UIViewController {
     
-    var addressOfficePlaces: [String] = []
-    var geocoder = CLGeocoder()
+    var addressOfficePlaces: [CLPlacemark] = []
+    let geocoder = CLGeocoder()
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -30,33 +30,40 @@ class ViewController: UIViewController {
             guard error == nil else { return }
             do {
                 let jsonprint = try JSONDecoder().decode([JsonPrivat].self, from: data)
-//                print(jsonprint)
-               
-                for item in jsonprint{
-                    self.addressOfficePlaces = ["\(item.country!), \(item.city!), \(item.address!)"]
-//                    print(self.addressOfficePlaces)
-                    for base in self.addressOfficePlaces{
-                        self.geocoder.geocodeAddressString(base, completionHandler: { (placemarks, error) in
-                            print("\(String(describing: placemarks?.count))")
-                        })
-                        print("\(base)")
-                       
-                    }
+//                        print(jsonprint)
+                for item in jsonprint {
+                    let addres = "\(item.country!), \(item.city!), \(item.address!)"
+                   
+                    self.geocoder.geocodeAddressString(addres, completionHandler: { (placemark, error) in
+                        self.converterPlacemarkArray(placemark: placemark)
+                    })
+                    
                 }
-//                let geoCoder = CLGeocoder()
-
+                
+                
+                
             } catch let error{
                 print(error)
             }
         }.resume()
-        
-        
+       
     }
-    func arrayPlacemarks(placemarks: [CLPlacemark]?, error: Error?){
-      
-      
-    }
+    func converterPlacemarkArray(placemark:[CLPlacemark]?){
+        var location: CLLocation?
+        
+        location = placemark?.first?.location
+        
+            if let location = location {
+                let cordinate = location.coordinate
+                print("\(cordinate.latitude), \(cordinate.longitude)")
+            }else{
+                print("No location")
+            }
+            
+        }
     
+    
+
 
 }
 
